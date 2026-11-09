@@ -21,7 +21,7 @@ for chave in csvs:
 df = pd.concat(partes, ignore_index=True)
 total_original = len(df)
 
-# Limpeza: remove duplicatas, valores ausentes e medições fora dos limites didáticos.
+# Limpeza: remove duplicatas e valores ausentes 
 df = df.drop_duplicates()
 df["timestamp"] = pd.to_datetime(df["timestamp"], errors="coerce")
 obrigatorias = ["timestamp", "sensor_id", "andar", "temperatura_c", "umidade_pct", "energia_kwh"]
